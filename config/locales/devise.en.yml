@@ -2,6 +2,14 @@
 
 en:
   devise:
+    login: "Log in"
+    signup: "Sign up"
+    forgot_password: "Forgot your password?"
+    signin_with: "Sign in with %{parameter}"
+    didnot_receive_confirm: "Didn't receive confirmation instructions?"
+    didnot_receive_unlock: "Didn't receive unlock instructions?"
+    back: "Back"
+    are_you_sure: "Are you sure?"
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
@@ -35,6 +43,19 @@ en:
       updated: "Your password has been changed successfully. You are now signed in."
       updated_not_active: "Your password has been changed successfully."
     registrations:
+      new:
+        signup: "Create new account"
+        signup_button: "Sign up"
+        login: "Log in"
+        min_character: "characters minimum"
+      edit:
+        edit: "Edit %{parameter}"
+        cancel_account: "Cancel my account"
+        update: "Update"
+        unhappy: "Unhappy?"
+        waiting_confirm: "Currently waiting confirmation for:"
+        notice_password: "(leave blank if you don't want to change it)"
+        notice_current_password: "(we need your current password to confirm your changes)"
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
       signed_up: "Welcome! You have signed up successfully."
       signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
@@ -43,6 +64,8 @@ en:
       update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirm link to confirm your new email address."
       updated: "Your account has been updated successfully."
     sessions:
+      new:
+        login: "Welcome to FTS System"
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
