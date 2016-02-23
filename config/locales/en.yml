@@ -23,3 +23,5 @@ en:
   hello: "Hello world"
   framgia_test: "Framgia Test"
   home: "Home"
+  sign_out: "Sign out"
+  edit_profile: "Edit profile"
