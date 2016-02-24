@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160223040646) do
+ActiveRecord::Schema.define(version: 20160224033514) do
 
   create_table "admin_logs", force: :cascade do |t|
     t.string   "action"
@@ -28,8 +28,10 @@ ActiveRecord::Schema.define(version: 20160223040646) do
     t.integer  "question_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.datetime "deleted_at"
   end
 
+  add_index "answers", ["deleted_at"], name: "index_answers_on_deleted_at"
   add_index "answers", ["question_id"], name: "index_answers_on_question_id"
 
   create_table "exams", force: :cascade do |t|
@@ -41,8 +43,10 @@ ActiveRecord::Schema.define(version: 20160223040646) do
     t.integer  "user_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.datetime "deleted_at"
   end
 
+  add_index "exams", ["deleted_at"], name: "index_exams_on_deleted_at"
   add_index "exams", ["subject_id"], name: "index_exams_on_subject_id"
   add_index "exams", ["user_id"], name: "index_exams_on_user_id"
 
@@ -55,8 +59,10 @@ ActiveRecord::Schema.define(version: 20160223040646) do
     t.integer  "accepted_by"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.datetime "deleted_at"
   end
 
+  add_index "questions", ["deleted_at"], name: "index_questions_on_deleted_at"
   add_index "questions", ["subject_id"], name: "index_questions_on_subject_id"
 
   create_table "results", force: :cascade do |t|
@@ -67,9 +73,11 @@ ActiveRecord::Schema.define(version: 20160223040646) do
     t.integer  "answer_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.datetime "deleted_at"
   end
 
   add_index "results", ["answer_id"], name: "index_results_on_answer_id"
+  add_index "results", ["deleted_at"], name: "index_results_on_deleted_at"
   add_index "results", ["exam_id"], name: "index_results_on_exam_id"
   add_index "results", ["question_id"], name: "index_results_on_question_id"
 
@@ -80,7 +88,10 @@ ActiveRecord::Schema.define(version: 20160223040646) do
     t.string   "description"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.datetime "deleted_at"
   end
+
+  add_index "subjects", ["deleted_at"], name: "index_subjects_on_deleted_at"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -99,8 +110,10 @@ ActiveRecord::Schema.define(version: 20160223040646) do
     t.string   "avatar"
     t.integer  "role",                   default: 0
     t.string   "chatwork_id"
+    t.datetime "deleted_at"
   end
 
+  add_index "users", ["deleted_at"], name: "index_users_on_deleted_at"
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 

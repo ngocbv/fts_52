@@ -25,3 +25,4 @@ en:
   home: "Home"
   sign_out: "Sign out"
   edit_profile: "Edit profile"
+  no_permission: "You have no permission to access this!"
