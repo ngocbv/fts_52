@@ -1,2 +1,72 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+ul.alert {
+  padding-left: 30px;
+}
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+.checkbox {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
+.thumbnail {
+  display: block;
+  padding: 50px;
+  margin-bottom: 20px;
+  line-height: 1.42857143;
+  background-color: #DDD;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: border 0.2s ease-in-out;
+  transition: border 0.2s ease-in-out;
+}
+
+.col-md-offset-1 {
+  margin-left: 8.33333333%;
+  margin-top: 40px;
+}
+
+.course_list_border {
+  border-bottom:1px solid #e2e8e9;
+  padding-bottom:15px;
+}
+
+.alert {
+  list-style: none;
+}
+
+.alert-success, .alert-notice {
+  border-left: 3px solid #00C040;
+}
+
+.alert-warning, .alert-danger {
+  border-left: 3px solid rgba(192, 35, 0, 0.79);
+}
+
+.debug_dump {
+  margin-top: 50px;
+}
