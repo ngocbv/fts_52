@@ -23,6 +23,8 @@ en:
   hello: "Hello world"
   framgia_test: "Framgia Test"
   home: "Home"
+  log_in: "Log in"
+  my_profile: "My profile"
   sign_out: "Sign out"
   edit_profile: "Edit profile"
   no_permission: "You have no permission to access this!"
