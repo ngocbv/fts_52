@@ -31,6 +31,7 @@ gem "slim"
 gem "whenever", require: false
 gem "social-share-button"
 gem "public_activity"
+gem "figaro"
 
 group :production do
   gem "pg"

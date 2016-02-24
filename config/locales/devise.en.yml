@@ -10,6 +10,11 @@ en:
     didnot_receive_unlock: "Didn't receive unlock instructions?"
     back: "Back"
     are_you_sure: "Are you sure?"
+    send_password: "Send me reset password instructions"
+    change_your_password: "Change your password"
+    change_my_password: "Change my password"
+    new_password: "New password"
+    confirm_new_password: "Confirm new password"
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
@@ -42,12 +47,14 @@ en:
       send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
       updated: "Your password has been changed successfully. You are now signed in."
       updated_not_active: "Your password has been changed successfully."
+      edit:
+        min_character: "%{parameter} characters minimum"
     registrations:
       new:
         signup: "Create new account"
         signup_button: "Sign up"
         login: "Log in"
-        min_character: "characters minimum"
+        min_character: "%{parameter} characters minimum"
       edit:
         edit: "Edit %{parameter}"
         cancel_account: "Cancel my account"
