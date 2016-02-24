@@ -15,3 +15,15 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+
+function remove_fields(link) {
+  var ip = $(link).parent().find("input[type='hidden']");
+  $(ip).val("true");
+  $(link).closest(".nested-fields").hide();
+}
+
+function add_fields(link, association, content) {
+  var new_id = new Date().getTime();
+  var regexp = new RegExp("new_" + association, "g")
+  $(content.replace(regexp, new_id)).insertBefore("input[type='submit']");
+}
