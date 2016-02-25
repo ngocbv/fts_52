@@ -32,6 +32,7 @@ gem "whenever", require: false
 gem "social-share-button"
 gem "public_activity"
 gem "figaro"
+gem "config"
 
 group :production do
   gem "pg"
