@@ -1,0 +1,6 @@
+<% if @subject.new_record? %>
+  $("#error_messages").html("<%= j render 'shared/error_messages', object: @subject %>");
+<% else %>
+  <% flash[:success] = t ".success" %>
+  window.location = "<%= admin_subjects_url %>";
+<% end %>

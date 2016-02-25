@@ -1,0 +1,30 @@
+<div id="error_messages">
+  <%= render "shared/error_messages", object: f.object %>
+</div>
+
+<div class="form-group">
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control", required: true %>
+</div>
+
+<div class="form-group">
+  <%= f.label :description %>
+  <%= f.text_area :description, class: "form-control" %>
+</div>
+
+<div class="form-group">
+  <%= f.label :duration %>
+  <%= f.time_select :duration, class: "form-control", required: true %>
+</div>
+
+<div class="form-group">
+  <%= f.label :question_num %>
+  <%= f.text_field :question_num, class: "form-control", required: true %>
+</div>
+
+<div class="modal-footer">
+  <% if f.object.new_record? %>
+    <button type="button" class="btn btn-default" data-dismiss="modal"><%= t ".close" %></button>
+  <% end %>
+  <%= f.submit class: "btn btn-success" %>
+</div>
