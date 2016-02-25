@@ -1,0 +1,38 @@
+<h1><%= t ".list_users" %></h1>
+<%= link_to t(".create_user"), new_admin_user_path, class: "btn btn-success pull-right" %>
+<table class="table table-hover">
+  <thead>
+    <tr class="info">
+      <th><%= t ".id" %></th>
+      <th><%= t ".name" %></th>
+      <th><%= t ".email" %></th>
+      <th><%= t ".role" %></th>
+      <th><%= t ".chatwork_id" %></th>
+      <th><%= t ".created_at" %></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.role.capitalize %></td>
+        <td><%= user.chatwork_id %></td>
+        <td><%= user.created_at %></td>
+        <td><%= link_to t(".edit"), edit_admin_user_path(user),
+          class: "btn btn-primary" %></td>
+        <% if user.is_user? current_user %>
+          <td></td>
+        <% else %>
+          <td>
+            <%= link_to t(".delete"), [:admin, user],
+              method: :delete, data: {confirm: t(".delete_confirm")}, class: "btn btn-danger" %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -28,3 +28,31 @@ en:
   sign_out: "Sign out"
   edit_profile: "Edit profile"
   no_permission: "You have no permission to access this!"
+  submit: "Submit"
+  users: "Users"
+  admin:
+    users:
+      new:
+        new: "New user"
+      form_new:
+        min_character: "%{parameter} characters minimum"
+      index:
+        list_users: "List users"
+        id: "ID"
+        name: "Name"
+        email: "Email"
+        role: "Role"
+        chatwork_id: "Chatwork ID"
+        created_at: "Created at"
+        edit: "Edit"
+        delete: "Delete"
+        delete_confirm: "Do you want to delete this user?"
+      create:
+        success: "Created new user successfully"
+      edit:
+        edit: "Edit user"
+      update:
+        edit_success: "You have edited user successfully"
+      destroy:
+        delete_success: "You have deleted user successfully"
+        delete_fail: "Cannot delete this user"

@@ -3,4 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users, only: [:show]
+
+  namespace :admin do
+    root "users#index"
+    resources :users
+  end
 end
