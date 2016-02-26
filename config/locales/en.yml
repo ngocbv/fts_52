@@ -30,6 +30,9 @@ en:
   no_permission: "You have no permission to access this!"
   submit: "Submit"
   users: "Users"
+  add_field: "Add fields"
+  remove: "Remove"
+  correct: "Correct"
   admin:
     users:
       new:
@@ -56,3 +59,11 @@ en:
       destroy:
         delete_success: "You have deleted user successfully"
         delete_fail: "Cannot delete this user"
+  contribute_question: "Contribute questions"
+  user:
+    question:
+      suggested: "Suggested Question"
+      new: "New Question"
+      create: "Create question"
+      create_success: "Create success"
+      create_fail: "Create fail"

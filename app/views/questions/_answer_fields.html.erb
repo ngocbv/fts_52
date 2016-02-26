@@ -1,0 +1,16 @@
+<div class="choise">
+  <div class="nested-fields">
+    <div class="row">
+      <div class="col-md-9">
+        <%= f.text_field :content, class: "form-control" %>
+      </div>
+      <div class="col-md-2">
+        <%= f.check_box :correct, class: "radio_answer col-md-2" %>
+        <%= f.label :correct, t("correct"), class: "col-md-10" %>
+      </div>
+      <div class="col-md-1">
+        <%= link_to_remove_fields t("remove"), f %>
+      </div>
+    </div>
+  </div>
+</div>

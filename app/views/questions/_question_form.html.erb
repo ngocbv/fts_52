@@ -1,0 +1,33 @@
+<%= form_for [current_user, @question] do |f| %>
+  <%= render "shared/error_messages", object: @question %>
+  <%= f.hidden_field :created_by, value: current_user.id %>
+  <%= f.hidden_field :state, value: :waiting %>
+
+  <%= f.label :subject %>
+  <%= f.select :subject_id,
+    options_from_collection_for_select(@subjects, :id, :name, params[:subject_id]),
+    {}, {class: "form-control"} %>
+
+  <%= f.label :content %>
+  <%= f.text_area :content, class: "form-control" %>
+
+  <%= f.label :question_type %>
+  <%= f.select :question_type, Question.question_types.keys.to_a, {selected: :single},
+    {class: "form-control width-question-type select-box"} %>
+
+  <%= f.label :answer %>
+  <div class="choise">
+    <%= link_to_add_fields t("add_field"), f, :answers %>
+    <%= f.fields_for :answers do |answer| %>
+      <%= render "answer_fields", f: answer %>
+    <% end %>
+  </div>
+
+  <div id="text">
+    <%= f.fields_for :answers do |answer| %>
+      <%= answer.text_field :content, class: "form-control" %>
+    <% end %> 
+  </div>
+
+  <%= f.submit t("user.question.create"), class: "btn btn-primary col-md-3" %>
+<% end %>
