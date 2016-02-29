@@ -21,4 +21,12 @@ class ApplicationController < ActionController::Base
       end
     end
   end
+
+  private
+  def current_ability
+    controller_namespace_segments = params[:controller].split "/"
+    controller_namespace_segments.pop
+    controller_namespace = controller_namespace_segments.join("/").camelize
+    Ability.new current_user, controller_namespace
+  end
 end

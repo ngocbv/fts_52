@@ -3,10 +3,11 @@
     <%= link_to t("framgia_test"), root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to t("home"), root_path %></li>
         <% if user_signed_in? %>
+          <li><%= link_to t("home"), user_exams_path(current_user) %></li>
           <% if current_user.admin? %>
             <li><%= link_to t(:users), admin_users_path %></li>
+            <li><%= link_to t(:subjects), admin_subjects_path %></li>
           <% end %>
           <li>
             <%= link_to t("contribute_question"), user_questions_path(current_user) %>

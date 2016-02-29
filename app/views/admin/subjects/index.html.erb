@@ -16,7 +16,7 @@
       <tr>
         <td><%= subject.id %></td>
         <td><%= subject.name %></td>
-        <td><%= subject.duration.to_formatted_s(:time) %></td>
+        <td><%= subject.duration.to_formatted_s :time %></td>
         <td><%= subject.question_num %></td>
         <td><%= subject.created_at %></td>
         <td><%= link_to t(".edit"), edit_admin_subject_path(subject), class: "btn btn-warning" %></td>

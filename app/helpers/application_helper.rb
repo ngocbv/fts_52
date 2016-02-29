@@ -17,7 +17,33 @@ module ApplicationHelper
       "new_#{association}" do |builder|
         render association.to_s.singularize + "_fields", f: builder
       end
-    link_to name, "javascript:void(0)", onclick: 
+    link_to name, "javascript:void(0)", onclick:
       "add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")"
+  end
+
+  def format_time time
+    if time.nil?
+      "-:-"
+    else
+      time.to_formatted_s :time
+    end
+  end
+
+  def status_label status
+    open = "<span class='label label-"
+    label = case status
+    when "unstart"
+      "default"
+    when "started"
+      "primary"
+    when "inprogress"
+      "info"
+    when "uncheck"
+      "warning"
+    when "checked"
+      "success"
+    end
+    str = open + label + "'>#{status}</span>"
+    str.html_safe
   end
 end
