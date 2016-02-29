@@ -3,4 +3,8 @@ class Subject < ActiveRecord::Base
 
   has_many :exams
   has_many :questions, dependent: :destroy
+
+  validates :duration, numericality: true
+  validates :question_num, numericality: [only_integer: true]
+  validates :name, presence: true
 end

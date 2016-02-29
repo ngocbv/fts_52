@@ -59,6 +59,31 @@ en:
       destroy:
         delete_success: "You have deleted user successfully"
         delete_fail: "Cannot delete this user"
+    subjects:
+      index:
+        list_subjects: "List subjects"
+        id: "ID"
+        name: "Name"
+        duration: "Duration"
+        description: "Description"
+        question_num: "Question number"
+        created_at: "Created at"
+        new_subject: "New subject"
+        create_new_subject: "Create new subject"
+        close: "Close"
+        edit: "Edit"
+        delete: "Delete"
+        confirm_delete: "Do you want to delete this subject?"
+      form:
+        new_subject: "New subject"
+        update: "Update subject"
+      create:
+        success: "Create new subject successfully"
+        fail: "Fail to create new subject"
+      update:
+        success: "Update subject successfully"
+      destroy:
+        success: "Delete subject successfully"
   contribute_question: "Contribute questions"
   user:
     question:

@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     resources :questions, only: [:new, :create, :index]
   end
-  
+
   namespace :admin do
     root "users#index"
-    resources :users
+    resources :users, except: :show
+    resources :subjects, except: [:show, :new]
   end
 end
