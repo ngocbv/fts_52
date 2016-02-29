@@ -105,3 +105,7 @@ en:
       question_num: "Question number"
       spent_time: "Spent time"
       score: "Score"
+      create_exam: "Create exam"
+    create:
+      success: "Create new exam successfully"
+      fail: "Cannot create new exam"

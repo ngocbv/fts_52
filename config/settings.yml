@@ -1,2 +1,9 @@
 password:
   min_character: 8
+exams:
+  status:
+    "unstart": 0
+    "started": 1
+    "inprogress": 2
+    "uncheck": 3
+    "checked": 4
