@@ -30,9 +30,12 @@ en:
   no_permission: "You have no permission to access this!"
   submit: "Submit"
   users: "Users"
+  subjects: "Subjects"
   add_field: "Add fields"
   remove: "Remove"
   correct: "Correct"
+  start: "Start"
+  view: "View"
   admin:
     users:
       new:
@@ -92,3 +95,13 @@ en:
       create: "Create question"
       create_success: "Create success"
       create_fail: "Create fail"
+  exams:
+    index:
+      exam_list: "Examination List"
+      created_date: "Created Date"
+      subject: "Subject"
+      status: "Status"
+      duration: "Duration"
+      question_num: "Question number"
+      spent_time: "Spent time"
+      score: "Score"
