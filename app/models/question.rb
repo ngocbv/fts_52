@@ -12,5 +12,4 @@ class Question < ActiveRecord::Base
   belongs_to :subject
 
   validates :content, presence: true
-  validates :answers, presence: true
 end

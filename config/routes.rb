@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:show] do
     resources :questions, only: [:new, :create, :index]
-    resources :exams, only: [:index]
+    resources :exams, only: [:index, :create]
   end
 
   namespace :admin do
