@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160226054335) do
+ActiveRecord::Schema.define(version: 20160302024812) do
 
   create_table "admin_logs", force: :cascade do |t|
     t.string   "action"
@@ -66,17 +66,15 @@ ActiveRecord::Schema.define(version: 20160226054335) do
   add_index "questions", ["subject_id"], name: "index_questions_on_subject_id"
 
   create_table "results", force: :cascade do |t|
-    t.string   "answer_text"
     t.boolean  "correct"
     t.integer  "exam_id"
     t.integer  "question_id"
-    t.integer  "answer_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.datetime "deleted_at"
+    t.string   "content_answer"
   end
 
-  add_index "results", ["answer_id"], name: "index_results_on_answer_id"
   add_index "results", ["deleted_at"], name: "index_results_on_deleted_at"
   add_index "results", ["exam_id"], name: "index_results_on_exam_id"
   add_index "results", ["question_id"], name: "index_results_on_question_id"

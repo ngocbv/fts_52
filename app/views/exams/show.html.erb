@@ -1,0 +1,18 @@
+<div><%= "#{t ".exam_date"} #{@exam.time_start}" %></div>
+<h1><%= @exam.subject.name %></h1>
+
+<%= form_for @exam, url: exam_path, method: :patch do |f| %>
+  <%= f.fields_for :results do |builder| %>
+    <% question = builder.object.question %>
+    <ol>
+      <li><%= question.content %></li>
+      <%= render "show_answer", question: question, f: builder, exam: @exam %>
+    </ol>
+  <% end %>
+  <% if @exam.started? || @exam.inprogress? %>
+    <div>
+      <%= f.submit t("exams.finish_exam"), class: "btn btn-primary", name: "finish_exam" %>
+      <%= f.submit t("exams.save_exam"), class: "btn btn-danger", name: "save_exam" %>
+    </div>
+  <% end %>
+<% end %>

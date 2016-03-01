@@ -109,6 +109,8 @@ en:
       edit: "Edit"
       delete: "Delete"
   exams:
+    finish_exam: "Finish exam"
+    save_exam: "Save exam"
     index:
       exam_list: "Examination List"
       created_date: "Created Date"
@@ -122,3 +124,8 @@ en:
     create:
       success: "Create new exam successfully"
       fail: "Cannot create new exam"
+    show:
+      exam_date: "Exam date: "
+    update:
+      success: "Finish this exam successfully"
+      fail: "Cannot finish this exam"

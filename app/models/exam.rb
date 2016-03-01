@@ -8,9 +8,11 @@ class Exam < ActiveRecord::Base
 
   has_many :results, dependent: :destroy
 
+  before_create :check_number_question
+
   scope :taken_by, -> user{where user_id: user.id}
 
-  before_create :check_number_question
+  accepts_nested_attributes_for :results
 
   private
   def check_number_question

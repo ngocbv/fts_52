@@ -1,5 +1,6 @@
 class ExamsController < ApplicationController
   load_and_authorize_resource
+  before_action :change_status, only: [:show, :update]
 
   def index
     @exams = @exams.taken_by(current_user).order created_at: :desc
@@ -10,15 +11,33 @@ class ExamsController < ApplicationController
   def create
     if @exam.save
       flash[:success] = t ".success"
-      Exams::CreateQuestionsForExam.new(@exam).create_questions
+      Exams::QuestionsForExamService.new(@exam).create_questions
     else
       flash[:warning] = t ".fail"
     end
-    redirect_to user_exams_path
+    redirect_to exams_path
+  end
+
+  def show
+  end
+
+  def update
+    if @exam.update_attributes exam_params
+      flash[:success] = t ".success"
+      Exams::ExamsService.new(@exam).check_results if @exam.uncheck?
+    else
+      flash[:warning] = t ".fail"
+    end
+    redirect_to exams_path
   end
 
   private
   def exam_params
-    params.require(:exam).permit :user_id, :subject_id
+    params.require(:exam).permit :user_id, :subject_id, results_attributes:
+      [:id, :question_id, :answer_text, content_answer: []]
+  end
+
+  def change_status
+    Exams::ExamsService.new(@exam).change_status params
   end
 end

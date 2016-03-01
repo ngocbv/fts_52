@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 User.create! email: "neversmile12b1@gmail.com",
   name: "Bach Van Ngoc",
   password: "12345678",
@@ -17,17 +10,42 @@ User.create! email: "neversmilek57clc@gmail.com",
   subj = Subject.create! name: "Subject #{n}",
     duration: 1,
     question_num: 5
-  10.times do |n|
-  ques = Question.create! content: "Question #{n}",
+  10.times do |k|
+  ques = Question.create! content: "Question #{k}",
     state: 1,
     subject: subj,
     created_by: 1,
     accepted_by: 1
-    5.times do |n|
+    5.times do |l|
       n == 1 ? ans = true : ans = false
-      Answer.create! content: "Answer 1",
+      Answer.create! content: "Answer #{l}",
         question: ques,
         correct: ans
       end
+    end
+  10.times do |k|
+  ques = Question.create! content: "Question #{10 + k}",
+    question_type: 1,
+    state: 1,
+    subject: subj,
+    created_by: 1,
+    accepted_by: 1
+    5.times do |l|
+      n == 1 || n == 2 ? ans = true : ans = false
+      Answer.create! content: "Answer #{l}",
+        question: ques,
+        correct: ans
+      end
+    end
+  10.times do |k|
+  ques = Question.create! content: "Question #{20 + k}",
+    question_type: 2,
+    state: 1,
+    subject: subj,
+    created_by: 1,
+    accepted_by: 1
+    Answer.create! content: true,
+      question: ques,
+      correct: true
     end
 end

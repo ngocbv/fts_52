@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:show] do
     resources :questions
-    resources :exams, only: [:index, :create]
   end
+
+  resources :exams, except: [:new, :destroy, :edit]
 
   namespace :admin do
     root "users#index"
