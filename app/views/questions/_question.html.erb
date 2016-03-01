@@ -1,0 +1,17 @@
+<tr>
+  <td><%= question.id %></td>
+  <td><%= link_to question.content, user_question_path(@user, question) %></td>
+  <td><%= question.subject.name %></td>
+  <td><%= question.question_type %></td>
+  <td><%= question_state question %></td>
+  <td>
+    <% if @user == current_user %>
+      <div class="pull-right">
+        <%= link_to "", edit_user_question_path(@user, question),
+          class: "glyphicon glyphicon-pencil" %>
+        <%= link_to "", [@user, question], method: :delete,
+          data: {confirm: t("you_sure")}, class: "glyphicon glyphicon-trash" %>
+      </div>
+    <% end %>
+  </td>
+</tr>

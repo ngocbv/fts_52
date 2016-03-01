@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
 
   has_many :admin_logs, dependent: :destroy
   has_many :exams, dependent: :destroy
+  has_many :questions
 
   validates :password, presence: true, allow_nil: true
 

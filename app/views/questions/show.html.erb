@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-md-5 col-md-offset-2">
+    <h2>
+      <%= t "user.question.question" %>
+    </h2>
+
+    <table class="table table-hover"> 
+      <tbody>
+        <tr>
+          <th scope="row"><%= t "user.question.content" %></th>
+          <td><%= @question.content %></td>
+        </tr>
+
+        <tr>
+          <th scope="row"><%= t "user.question.answer" %></th>
+          <td>
+            <table>
+              <tbody>
+                <% @question.answers.each do |answer| %>
+                <tr>
+                  <td>
+                    <span class="label label-<%= answer.correct ? 'success' : 'danger' %>">
+                      <%= answer.correct %>
+                    </span>
+                  </td>
+                  <td><%= answer.content %></td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row"><%= t "user.question.subject" %></th>
+          <td><%= @question.subject.name %></td>
+        </tr>
+
+        <tr>
+          <th scope="row"><%= t "user.question.type" %></th>
+          <td><%= @question.question_type %></td>
+        </tr>
+
+        <tr>
+          <th scope="row"><%= t "user.question.state" %></th>
+          <td>	<%= question_state @question %></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="row">
+      <%= link_to t("user.question.edit"), edit_user_question_path(current_user, @question),
+        class: "btn btn-info glyphicon glyphicon-pencil" %>
+      <%= link_to t("user.question.delete"), [current_user, @question], method: :delete,
+        data: {confirm: t("you_sure")}, class: "btn btn-danger glyphicon glyphicon-trash" %>
+    </div>
+  </div>
+</div>

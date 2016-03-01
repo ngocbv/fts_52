@@ -10,6 +10,7 @@ class Question < ActiveRecord::Base
   has_many :results, dependent: :destroy
 
   belongs_to :subject
+  belongs_to :user
 
   validates :content, presence: true
 end
