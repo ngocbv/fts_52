@@ -89,3 +89,10 @@ ul.alert {
 thead {
   background-color: #ddd;
 }
+
+.nested-fields {
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+  height: auto !important;
+}

@@ -10,7 +10,7 @@ class Ability
     else
       can :create, Exam
       can :read, :all
-      can :create, Question
+      can :manage, Question, user_id: user.id
     end
   end
 end

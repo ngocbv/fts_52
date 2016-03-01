@@ -1,6 +1,6 @@
 <%= form_for [current_user, @question] do |f| %>
   <%= render "shared/error_messages", object: @question %>
-  <%= f.hidden_field :created_by, value: current_user.id %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.hidden_field :state, value: :waiting %>
 
   <%= f.label :subject %>
@@ -29,5 +29,5 @@
     <% end %> 
   </div>
 
-  <%= f.submit t("user.question.create"), class: "btn btn-primary col-md-3" %>
+  <%= f.submit t("user.question.submit"), class: "btn btn-primary col-md-3" %>
 <% end %>

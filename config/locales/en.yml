@@ -36,6 +36,7 @@ en:
   correct: "Correct"
   start: "Start"
   view: "View"
+  you_sure: "You sure?"
   admin:
     users:
       new:
@@ -92,9 +93,21 @@ en:
     question:
       suggested: "Suggested Question"
       new: "New Question"
-      create: "Create question"
+      edit: "Edit Question"
+      submit: "Submit question"
       create_success: "Create success"
       create_fail: "Create fail"
+      update_success: "Update success"
+      update_fail: "Update fail"
+      delete_success: "Delete success"
+      question: "Question"
+      content: "Content"
+      answer: "Answer"
+      subject: "Subject"
+      type: "Type"
+      state: "State"
+      edit: "Edit"
+      delete: "Delete"
   exams:
     index:
       exam_list: "Examination List"
