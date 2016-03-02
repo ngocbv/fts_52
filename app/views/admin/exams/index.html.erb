@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-md-9">
+    <h1><%= t ".exam_list" %></h1>
+    <table class="table">
+      <thead>
+        <th><%= t ".created_date" %></th>
+        <th><%= t ".subject" %></th>
+        <th><%= t ".status" %></th>
+        <th><%= t ".duration" %></th>
+        <th><%= t ".question_num" %></th>
+        <th><%= t ".spent_time" %></th>
+        <th><%= t ".score" %></th>
+        <th></th>
+        <th></th>
+      </thead>
+      <tbody>
+        <% @exams.each do |exam| %>
+          <tr>
+            <td><%= exam.created_at %></td>
+            <td><%= exam.subject.name %></td>
+            <td><%= status_label exam.status %></td>
+            <td><%= format_time exam.subject.duration %></td>
+            <td><%= exam.subject.question_num %></td>
+            <td><%= format_time exam.spent_time %></td>
+            <td><%= format_score exam %></td>
+            <td></td>
+            <td></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-3"></div>
+</div>
