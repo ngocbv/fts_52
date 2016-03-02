@@ -88,6 +88,9 @@ en:
         success: "Update subject successfully"
       destroy:
         success: "Delete subject successfully"
+    exams:
+      index:
+        exam_list: "Examination List"
   contribute_question: "Contribute questions"
   user:
     question:
