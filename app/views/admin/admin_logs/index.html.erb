@@ -1,0 +1,20 @@
+<h1><%= t ".list_log" %></h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= t ".time" %></th>
+      <th><%= t ".admin_name" %></th>
+      <th><%= t ".action" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @admin_logs.each do |log| %>
+      <tr>
+        <td><%= log.created_at %></td>
+        <td><%= log.user.name %></td>
+        <td><%= log.action.capitalize %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

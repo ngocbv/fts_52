@@ -4,5 +4,6 @@ class Admin::QuestionsController < ApplicationController
   def index
     @search = @questions.accept.search params[:q]
     @questions = @search.result
+    @activities = Questions::QuestionActivityService.list_activities
   end
 end

@@ -1,9 +1,9 @@
 module SubjectsHelper
-  def status_button status
-    if status == "unstart"
-      link_to t(:start), "#", class: "btn btn-primary"
+  def status_button exam
+    if exam.status == "unstart"
+      link_to t(:start), exam, class: "btn btn-primary"
     else
-      link_to t(:view), "#", class: "btn btn-success"
+      link_to t(:view), exam, class: "btn btn-success"
     end
   end
 

@@ -95,6 +95,20 @@ en:
       index:
         exam_list: "Examination List"
         list_activities: "Activities"
+        id: "ID"
+        created_date: "Created Date"
+        subject: "Subject"
+        status: "Status"
+        duration: "Duration"
+        question_num: "Question number"
+        spent_time: "Spent time"
+        score: "Score"
+    admin_logs:
+      index:
+        list_log: "Admin login logout activities"
+        time: "Time action"
+        admin_name: "Admin name"
+        action: "Action"
   contribute_question: "Contribute questions"
   user:
     question:
@@ -121,6 +135,7 @@ en:
     save_exam: "Save exam"
     index:
       exam_list: "Examination List"
+      id: "ID"
       created_date: "Created Date"
       subject: "Subject"
       status: "Status"

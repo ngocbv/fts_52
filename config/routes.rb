@@ -13,5 +13,6 @@ Rails.application.routes.draw do
     resources :subjects, except: [:show, :new]
     resources :exams, only: [:index]
     resources :questions, only: [:index]
+    resources :admin_logs, only: [:index]
   end
 end
