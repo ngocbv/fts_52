@@ -1,0 +1,25 @@
+<% case question.question_type %>
+<% when "single" %>
+  <% question.answers.each do |answer| %>
+    <div>
+      <%= f.radio_button :content_answer, answer.id, {
+        checked: f.object.content_answer.include?(answer.id.to_s),
+        multiple: true, disabled: exam.checked?} %>
+      <%= answer.content %>
+    </div>
+  <% end %>
+<% when "multiple" %>
+  <% question.answers.each do |answer| %>
+    <div>
+      <%= f.check_box :content_answer, {
+        checked: f.object.content_answer.include?(answer.id.to_s),
+        multiple: true, disabled: exam.checked?}, answer.id, false %>
+      <%= answer.content %>
+    </div>
+  <% end %>
+<% when "text" %>
+  <div>
+    <%= f.text_field :content_answer, multiple: true, disabled: exam.checked?,
+      class: "form-control" %>
+  </div>
+<% end %>

@@ -1,5 +1,5 @@
 <div class="form-exam">
-  <%= form_for @exam, url: user_exams_path, method: :post, html: {class: "form-inline"} do |f| %>
+  <%= form_for @exam, url: exams_path, method: :post, html: {class: "form-inline"} do |f| %>
     <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.select :subject_id, @subjects.collect {|p| [p.name, p.id]}, {}, class: "form-control" %>
     <%= f.submit t(".create_exam"), class: "btn btn-primary" %>

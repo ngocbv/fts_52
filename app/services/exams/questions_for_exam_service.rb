@@ -1,5 +1,5 @@
 module Exams
-  class CreateQuestionsForExam
+  class QuestionsForExamService
     def initialize exam
       @exam = exam
     end
