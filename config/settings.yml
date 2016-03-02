@@ -1,3 +1,4 @@
+time_zone: "Hanoi"
 password:
   min_character: 8
 exams:
@@ -13,3 +14,4 @@ users:
     logout: 1
 view_limit_activities: 15
 answers_count_min: 1
+per_page_activity: 15

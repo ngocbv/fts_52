@@ -1,0 +1,24 @@
+<h1><%= t ".list_log" %></h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= t ".time" %></th>
+      <th><%= t ".admin_name" %></th>
+      <th><%= t ".action" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @admin_logs.each do |log| %>
+      <tr>
+        <td>
+          <%= log.created_at.to_formatted_s :long_ordinal %>
+          <em class="time-ago">(<%= time_ago_in_words log.created_at %>)</em>
+        </td>
+        <td><%= log.user.name %></td>
+        <td><%= log.action.capitalize %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate %>

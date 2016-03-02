@@ -5,7 +5,7 @@ class Admin::QuestionsController < ApplicationController
 
   def index
     @search = @questions.accept.search params[:q]
-    @questions = @search.result
+    @questions = @search.result.paginate page: params[:page]
     @activities = Questions::QuestionActivityService.list_activities
   end
 
