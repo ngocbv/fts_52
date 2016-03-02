@@ -31,12 +31,15 @@ en:
   submit: "Submit"
   users: "Users"
   subjects: "Subjects"
+  exams_name: "Exams"
   add_field: "Add fields"
   remove: "Remove"
   correct: "Correct"
   start: "Start"
   view: "View"
   you_sure: "You sure?"
+  question: "question"
+  here: "here"
   admin:
     users:
       new:
@@ -91,6 +94,7 @@ en:
     exams:
       index:
         exam_list: "Examination List"
+        list_activities: "Activities"
   contribute_question: "Contribute questions"
   user:
     question:
@@ -129,6 +133,15 @@ en:
       fail: "Cannot create new exam"
     show:
       exam_date: "Exam date: "
+      time_remaining: "Time remaining"
     update:
       success: "Finish this exam successfully"
       fail: "Cannot finish this exam"
+  public_activity:
+    exam:
+      create:
+        create: "has created exam with subject"
+      destroy:
+        destroy: "deleted a exam with subject"
+      update:
+        update: "updated a exam with subject"

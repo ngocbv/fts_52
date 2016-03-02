@@ -1,6 +1,8 @@
 class Exam < ActiveRecord::Base
   acts_as_paranoid
 
+  include PublicActivity::Common
+
   enum status: [:unstart, :started, :inprogress, :uncheck, :checked]
 
   belongs_to :subject

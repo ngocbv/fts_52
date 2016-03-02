@@ -30,5 +30,13 @@
       </tbody>
     </table>
   </div>
-  <div class="col-md-3"></div>
+  <div class="col-md-3">
+    <h1><%= t ".list_activities" %></h1>
+    <ul>
+      <% @activities.each do |activity| %>
+        <li class="activity"><%= activity.owner.name if activity.owner %>
+        <%= render_activity activity %></li>
+      <% end %>
+    </ul>
+  </div>
 </div>

@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  include PublicActivity::StoreController
+  hide_action :current_user
+
   before_action :authenticate_user!
   before_action :config_devise_permitted_parameters, if: :devise_controller?
 

@@ -12,6 +12,7 @@ class ExamsController < ApplicationController
     if @exam.save
       flash[:success] = t ".success"
       Exams::QuestionsForExamService.new(@exam).create_questions
+      @exam.create_activity :create, owner: current_user
     else
       flash[:warning] = t ".fail"
     end
@@ -25,6 +26,7 @@ class ExamsController < ApplicationController
     if @exam.update_attributes exam_params
       flash[:success] = t ".success"
       Exams::ExamsService.new(@exam).check_results if @exam.uncheck?
+      @exam.create_activity :update, owner: current_user
     else
       flash[:warning] = t ".fail"
     end
