@@ -1,7 +1,7 @@
-<%= form_for [current_user, @question] do |f| %>
+<%= form_for [:admin, @question] do |f| %>
   <%= render "shared/error_messages", object: @question %>
   <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.hidden_field :state, value: :waiting %>
+  <%= f.hidden_field :state, value: :accept %>
 
   <%= f.label :subject %>
   <%= f.select :subject_id,

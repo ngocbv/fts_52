@@ -12,3 +12,4 @@ users:
     login: 0
     logout: 1
 view_limit_activities: 15
+answers_count_min: 1

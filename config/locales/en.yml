@@ -169,3 +169,5 @@ en:
         update: "updated a "
       destroy:
         destroy: "deleted a "
+  errors:
+    answers_count_not_valid: "'s count is not valid"

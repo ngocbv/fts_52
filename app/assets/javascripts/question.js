@@ -2,11 +2,11 @@ $(document).ready(function(){
   $(".select-box").change(function(){
     if($(this).val() == "text"){
       $(".choise").hide();
-      $("#text").show();
+      $(".text").show();
     }else{
       $(".choise").show();
       $(".radio_answer").attr("checked", false);
-      $("#text").hide();
+      $(".text").hide();
     }
   });
 
