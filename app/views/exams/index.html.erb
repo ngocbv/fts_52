@@ -8,6 +8,7 @@
 <h1><%= t ".exam_list" %></h1>
 <table class="table">
   <thead>
+    <th><%= t ".id" %></th>
     <th><%= t ".created_date" %></th>
     <th><%= t ".subject" %></th>
     <th><%= t ".status" %></th>
@@ -20,6 +21,7 @@
   <tbody>
     <% @exams.each do |exam| %>
       <tr>
+        <td><%= exam.id %></td>
         <td><%= exam.created_at %></td>
         <td><%= exam.subject.name %></td>
         <td><%= status_label exam.status %></td>
@@ -27,7 +29,7 @@
         <td><%= exam.subject.question_num %></td>
         <td><%= format_time exam.spent_time %></td>
         <td><%= format_score exam %></td>
-        <td><%= status_button exam.status %></td>
+        <td><%= status_button exam %></td>
       </tr>
     <% end %>
   </tbody>

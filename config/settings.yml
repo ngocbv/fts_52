@@ -7,3 +7,8 @@ exams:
     "inprogress": 2
     "uncheck": 3
     "checked": 4
+users:
+  action:
+    login: 0
+    logout: 1
+view_limit_activities: 15

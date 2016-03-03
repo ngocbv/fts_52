@@ -3,6 +3,7 @@
     <h1><%= t ".exam_list" %></h1>
     <table class="table">
       <thead>
+        <th><%= t ".id" %></th>
         <th><%= t ".created_date" %></th>
         <th><%= t ".subject" %></th>
         <th><%= t ".status" %></th>
@@ -16,6 +17,7 @@
       <tbody>
         <% @exams.each do |exam| %>
           <tr>
+            <td><%= exam.id %></td>
             <td><%= exam.created_at %></td>
             <td><%= exam.subject.name %></td>
             <td><%= status_label exam.status %></td>
@@ -35,7 +37,9 @@
     <ul>
       <% @activities.each do |activity| %>
         <li class="activity"><%= activity.owner.name if activity.owner %>
-        <%= render_activity activity %></li>
+          <%= render_activity activity %>
+          <div class="time-ago"><em><%= time_ago_in_words activity.created_at %></em></div>
+        </li>
       <% end %>
     </ul>
   </div>

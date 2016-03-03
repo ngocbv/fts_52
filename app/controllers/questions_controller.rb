@@ -14,6 +14,7 @@ class QuestionsController < ApplicationController
   def create
     if @question.save
       flash[:success] = t "user.question.create_success"
+      @question.create_activity :create, owner: current_user
       redirect_to :back
     else
       flash[:danger] = t "user.question.create_fail"
@@ -31,6 +32,7 @@ class QuestionsController < ApplicationController
   def update
     if @question.update_attributes question_params
       flash[:success] = t "user.question.update_success"
+      @question.create_activity :update, owner: current_user
       redirect_to user_questions_path current_user
     else
       flash[:danger] = t "user.question.update_fail"
@@ -41,6 +43,7 @@ class QuestionsController < ApplicationController
   def destroy
     @question.destroy
     flash[:success] = t "user.question.delete_success"
+    @question.create_activity :destroy, owner: current_user
     redirect_to user_questions_path current_user
   end
 
