@@ -94,7 +94,8 @@ en:
   contribute_question: "Contribute questions"
   user:
     question:
-      suggested: "Suggested Question"
+      all: "All Questions"
+      suggested: "Suggested Questions"
       new: "New Question"
       edit: "Edit Question"
       submit: "Submit question"
@@ -103,7 +104,7 @@ en:
       update_success: "Update success"
       update_fail: "Update fail"
       delete_success: "Delete success"
-      question: "Question"
+      question: "Questions"
       content: "Content"
       answer: "Answer"
       subject: "Subject"
