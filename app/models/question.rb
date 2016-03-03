@@ -15,18 +15,4 @@ class Question < ActiveRecord::Base
   belongs_to :user
 
   validates :content, presence: true
-  validate do
-    check_answers_count
-  end
-
-  private
-  def answers_count_valid?
-    answers.count >= Settings.answers_count_min
-  end
-
-  def check_answers_count
-    unless answers_count_valid?
-      errors.add :answers, I18n.t("errors.answers_count_not_valid")
-    end
-  end
 end

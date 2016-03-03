@@ -5,6 +5,7 @@ class Ability
     user ||= User.new
     if user.admin?
       can :manage, :all
+      can :index, :suggested_questions
     elsif controller_namespace == "Admin"
       cannot :read, :all
     else

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :exams, only: [:index]
     resources :admin_logs, only: [:index]
     resources :questions
+    resources :suggested_questions, only: [:index]
   end
 
   mount Sidekiq::Web, at: "/sidekiq"

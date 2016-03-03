@@ -5,11 +5,22 @@
   <td><%= question.question_type %></td>
   <td><%= question_state question %></td>
   <td>
-    <div class="pull-right">
-      <%= link_to "", edit_admin_question_path(question),
-        class: "glyphicon glyphicon-pencil" %>
-      <%= link_to "", [:admin, question], method: :delete,
-        data: {confirm: t("you_sure")}, class: "glyphicon glyphicon-trash" %>
-    </div>
+    <% case question.state %>
+    <% when "accept" %>
+      <div class="pull-right">
+        <%= link_to "", edit_admin_question_path(question),
+          class: "glyphicon glyphicon-pencil btn btn-sm btn-info" %>
+        <%= link_to "", [:admin, question], method: :delete,
+          data: {confirm: t("you_sure")},
+          class: "glyphicon glyphicon-trash btn-sm btn btn-danger" %>
+      </div>
+    <% when "waiting" %>
+      <div class="pull-right">
+        <%= link_to "", admin_question_path(question, state: Settings.accept),
+          method: :patch, class: "glyphicon glyphicon-ok btn btn-sm btn-success" %>
+        <%= link_to "", admin_question_path(question, state: Settings.refuse),
+          method: :patch, class: "glyphicon glyphicon-remove btn-sm btn btn-danger" %>
+      </div>
+    <% end %>
   </td>
 </tr>

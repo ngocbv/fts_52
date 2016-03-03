@@ -8,9 +8,10 @@
     <% if @user == current_user %>
       <div class="pull-right">
         <%= link_to "", edit_user_question_path(@user, question),
-          class: "glyphicon glyphicon-pencil" %>
+          class: "glyphicon glyphicon-pencil btn btn-sm btn-info" %>
         <%= link_to "", [@user, question], method: :delete,
-          data: {confirm: t("you_sure")}, class: "glyphicon glyphicon-trash" %>
+          data: {confirm: t("you_sure")},
+          class: "glyphicon glyphicon-trash btn btn-sm btn-danger" %>
       </div>
     <% end %>
   </td>
