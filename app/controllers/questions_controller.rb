@@ -1,13 +1,13 @@
 class QuestionsController < ApplicationController
   load_and_authorize_resource
   before_action :load_user, only: [:index]
+  before_action :load_subjects, only: [:new]
 
   def index
     @questions = @user.questions
   end
 
   def new
-    @subjects = Subject.all
     @question.answers.build
   end
 
@@ -17,7 +17,7 @@ class QuestionsController < ApplicationController
       @question.create_activity :create, owner: current_user
       redirect_to :back
     else
-      flash[:danger] = t "user.question.create_fail"
+      load_subjects
       render :new
     end
   end
@@ -35,7 +35,7 @@ class QuestionsController < ApplicationController
       @question.create_activity :update, owner: current_user
       redirect_to user_questions_path current_user
     else
-      flash[:danger] = t "user.question.update_fail"
+      @subjects = Subject.all
       render :edit
     end
   end
@@ -56,5 +56,10 @@ class QuestionsController < ApplicationController
 
   def load_user
     @user = User.find params[:user_id]
+  end
+
+  def load_subjects
+    @question.answers.build
+    @subjects = Subject.all
   end
 end

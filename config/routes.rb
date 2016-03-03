@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :users, except: :show
     resources :subjects, except: [:show, :new]
     resources :exams, only: [:index]
-    resources :questions, only: [:index]
     resources :admin_logs, only: [:index]
+    resources :questions, only: [:index, :new, :create]
   end
 end
