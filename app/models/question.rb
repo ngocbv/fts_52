@@ -1,6 +1,8 @@
 class Question < ActiveRecord::Base
   acts_as_paranoid
 
+  include PublicActivity::Common
+
   enum question_type: [:single, :multiple, :text]
   enum state: [:waiting, :accept, :refuse]
 
