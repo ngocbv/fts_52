@@ -25,6 +25,7 @@ module Exams
       end
       Result.update results.keys, results.values
       @exam.update_attributes status: Settings.exams.status.checked, score: correct_num
+      FinishExamsWorker.perform_async @exam.id
     end
   end
 end

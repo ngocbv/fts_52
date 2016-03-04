@@ -172,3 +172,11 @@ en:
         destroy: "deleted a "
   errors:
     answers_count_not_valid: "'s count is not valid"
+  exam_mailer:
+    finish_exam:
+      subject: "Send email finish exam"
+      header: "FTS Examination Result"
+      greeting: "Hi, %{name}"
+      body: "You have done successfully a exam with subject %{subject}
+        with %{score} points in total %{total_question} questions."
+      footer: "Thank you for using our system."

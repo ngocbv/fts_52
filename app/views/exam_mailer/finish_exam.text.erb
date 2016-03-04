@@ -1,0 +1,8 @@
+<%= t "exam_mailer.finish_exam.header" %>
+
+<%= t "exam_mailer.finish_exam.greeting", name: @exam.user.name %>
+
+<%= t "exam_mailer.finish_exam.body", subject: @exam.subject.name,
+  score: @exam.score, total_question: @exam.subject.question_num %>
+
+<%= t "exam_mailer.finish_exam.footer" %>

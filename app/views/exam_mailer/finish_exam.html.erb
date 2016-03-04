@@ -1,0 +1,10 @@
+<h1><%= t "exam_mailer.finish_exam.header" %></h1>
+
+<p><%= t "exam_mailer.finish_exam.greeting", name: @exam.user.name %></p>
+
+<p>
+  <%= t "exam_mailer.finish_exam.body", subject: @exam.subject.name,
+    score: @exam.score, total_question: @exam.subject.question_num %>
+</p>
+
+<p><%= t "exam_mailer.finish_exam.footer" %></p>

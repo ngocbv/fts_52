@@ -1,3 +1,5 @@
+require "sidekiq/web"
+
 Rails.application.routes.draw do
   root "static_pages#home"
   devise_for :users
@@ -15,5 +17,9 @@ Rails.application.routes.draw do
     resources :exams, only: [:index]
     resources :admin_logs, only: [:index]
     resources :questions
+  end
+
+  Rails.application.routes.draw do
+    mount Sidekiq::Web, at: "/sidekiq"
   end
 end
