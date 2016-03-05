@@ -17,6 +17,13 @@ class Exam < ActiveRecord::Base
 
   accepts_nested_attributes_for :results
 
+  class << self
+    def send_statistic_exam
+      User.all.each do |user|
+        ExamMailer.send_statistic_exam(user).deliver_now if user.exams.present?
+      end
+    end
+  end
   private
   def check_number_question
     subject = Subject.find subject_id

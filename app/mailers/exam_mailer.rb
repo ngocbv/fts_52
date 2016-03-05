@@ -8,4 +8,9 @@ class ExamMailer < ApplicationMailer
     @exam = exam
     mail to: @exam.user.email, subject: t(".subject")
   end
+
+  def send_statistic_exam user
+    @user = user
+    mail to: @user.email, subject: t(".subject")
+  end
 end

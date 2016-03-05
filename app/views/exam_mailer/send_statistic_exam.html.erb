@@ -1,0 +1,17 @@
+<h1><%= t "exam_mailer.send_statistic_exam.header" %></h1>
+
+<p><%= t "exam_mailer.send_statistic_exam.greeting", name: @user.name %></p>
+
+<h3><%= t "exam_mailer.send_statistic_exam.list_exam", time: Time.now.strftime("%B %Y") %></h3>
+<ul>
+  <% @user.exams.each do |exam| %>
+    <% if exam.created_at.month == Time.now.month %>
+      <li>
+        <strong><%= exam.subject.name %></strong> <em>(<%= exam.created_at.strftime "%F %X" %>)</em>.
+        <%= t "exam_mailer.send_statistic_exam.score" %>
+        <%= exam.score.present? ? "#{exam.score}/#{exam.subject.question_num}" : "-:-" %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+<p><%= t "exam_mailer.send_statistic_exam.footer" %></p>
