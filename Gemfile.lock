@@ -39,7 +39,7 @@ GEM
     arel (6.0.3)
     autoprefixer-rails (6.3.3.1)
       execjs
-    bcrypt (3.1.10)
+    bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.6)
@@ -120,7 +120,7 @@ GEM
       activerecord (>= 3.0)
       i18n (>= 0.5.0)
       railties (>= 3.0.0)
-    puma (3.0.2)
+    puma (3.1.0)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -177,7 +177,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    sidekiq (4.1.0)
+    sidekiq (4.1.1)
       concurrent-ruby (~> 1.0)
       connection_pool (~> 2.2, >= 2.2.0)
       redis (~> 3.2, >= 3.2.1)

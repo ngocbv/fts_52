@@ -18,8 +18,6 @@ gem "will_paginate"
 gem "bootstrap-will_paginate"
 gem "bcrypt"
 
-gem "config"
-
 gem "devise"
 gem "cancancan"
 gem "ransack"
