@@ -10,7 +10,8 @@ module Exams
       if params[:save_exam].present?
         @exam.update_attributes status: Settings.exams.status.inprogress
       end
-      if params[:finish_exam].present?
+      if params[:finish_exam].present? || (params[:save_exam].nil? &&
+        params[:finish_exam].nil? && !@exam.unstart? && !@exam.checked?)
         @exam.update_attributes status: Settings.exams.status.uncheck
       end
     end

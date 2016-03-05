@@ -104,3 +104,26 @@ thead {
 .time-ago {
   color: #397AB7;
 }
+
+.clock {
+  right: 0px;
+  position: fixed;
+}
+
+.time_remaining {
+  float: left;
+  width: 100%;
+}
+
+.time {
+  float: left;
+  width: 20%;
+}
+
+.action_submit {
+  padding-top: 20px;
+}
+
+.question {
+  padding-top: 20px;
+}

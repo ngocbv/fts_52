@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160303014558) do
+ActiveRecord::Schema.define(version: 20160304142047) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20160303014558) do
 
   create_table "exams", force: :cascade do |t|
     t.integer  "status",     default: 0
-    t.time     "spent_time"
+    t.integer  "spent_time", default: 0
     t.integer  "score"
     t.datetime "time_start"
     t.integer  "subject_id"
@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(version: 20160303014558) do
 
   create_table "subjects", force: :cascade do |t|
     t.string   "name"
-    t.time     "duration"
+    t.integer  "duration"
     t.integer  "question_num"
     t.string   "description"
     t.datetime "created_at",   null: false

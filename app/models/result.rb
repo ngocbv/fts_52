@@ -10,7 +10,7 @@ class Result < ActiveRecord::Base
     else
       temp = []
       question.answers.each do |answer|
-        temp << answer.id if answer.correct
+        temp << answer.id.to_s if answer.correct
       end
       temp == content_answer
     end

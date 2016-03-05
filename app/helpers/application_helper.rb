@@ -25,7 +25,7 @@ module ApplicationHelper
     if time.nil?
       "-:-"
     else
-      time.to_formatted_s :time
+      "#{time/60} : #{time%60}"
     end
   end
 

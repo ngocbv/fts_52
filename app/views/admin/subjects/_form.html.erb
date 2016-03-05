@@ -13,8 +13,8 @@
 </div>
 
 <div class="form-group">
-  <%= f.label :duration %>
-  <%= f.time_select :duration, class: "form-control", required: true %>
+  <%= f.label :duration %> <em>(<%= t ".seconds" %>)</em>
+  <%= f.text_field :duration, class: "form-control", required: true %>
 </div>
 
 <div class="form-group">
