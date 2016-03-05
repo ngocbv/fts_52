@@ -41,6 +41,9 @@ en:
   question: "question"
   here: "here"
   activity_logs: "Activity Logs"
+  background_job: "Background job"
+  sidekiq: "Sidekiq"
+  delayed_job: "Delayed job"
   admin:
     users:
       new:
@@ -184,4 +187,12 @@ en:
       greeting: "Hi, %{name}"
       body: "You have done successfully a exam with subject %{subject}
         with %{score} points in total %{total_question} questions."
+      footer: "Thank you for using our system."
+    start_exam:
+      subject: "Send email notice to start exam"
+      header: "Framgia Training System Notice"
+      greeting: "Hi, %{name}"
+      body1: "You have created a exam in FTS but you did not start, you can click "
+      start_exam: "start exam"
+      body2: " to start your exam."
       footer: "Thank you for using our system."

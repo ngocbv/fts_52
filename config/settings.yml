@@ -15,3 +15,4 @@ users:
 view_limit_activities: 15
 answers_count_min: 1
 per_page_activity: 15
+time_to_notice_start_exam: 8

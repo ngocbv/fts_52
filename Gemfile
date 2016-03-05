@@ -33,6 +33,8 @@ gem "social-share-button"
 gem "public_activity"
 gem "figaro"
 gem "config"
+gem "daemons"
+gem "delayed_job_web"
 
 group :production do
   gem "pg"
