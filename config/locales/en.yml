@@ -44,6 +44,7 @@ en:
   background_job: "Background job"
   sidekiq: "Sidekiq"
   delayed_job: "Delayed job"
+  search: "Search"
   admin:
     users:
       new:

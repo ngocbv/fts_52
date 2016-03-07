@@ -2,6 +2,9 @@ class Admin::UsersController < ApplicationController
   load_and_authorize_resource
 
   def index
+    @search = @users.search params[:q]
+    @users = @search.result
+    @search.build_condition
   end
 
   def new
