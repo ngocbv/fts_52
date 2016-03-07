@@ -3,4 +3,9 @@ class ExamMailer < ApplicationMailer
     @exam = exam
     mail to: @exam.user.email, subject: t(".subject")
   end
+
+  def start_exam exam
+    @exam = exam
+    mail to: @exam.user.email, subject: t(".subject")
+  end
 end

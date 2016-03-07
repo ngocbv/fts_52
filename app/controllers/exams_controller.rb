@@ -13,6 +13,8 @@ class ExamsController < ApplicationController
       flash[:success] = t ".success"
       Exams::QuestionsForExamService.new(@exam).create_questions
       @exam.create_activity :create, owner: current_user
+      Delayed::Job.enqueue(Exams::StartExamJob.new(@exam.id), 3,
+        Settings.time_to_notice_start_exam.hours.from_now)
     else
       flash[:warning] = t ".fail"
     end

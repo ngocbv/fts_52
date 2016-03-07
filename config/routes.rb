@@ -19,7 +19,6 @@ Rails.application.routes.draw do
     resources :questions
   end
 
-  Rails.application.routes.draw do
-    mount Sidekiq::Web, at: "/sidekiq"
-  end
+  mount Sidekiq::Web, at: "/sidekiq"
+  mount DelayedJobWeb => "/delayed_job"
 end

@@ -1,0 +1,9 @@
+<h1><%= t "exam_mailer.start_exam.header" %></h1>
+
+<p><%= t "exam_mailer.start_exam.greeting", name: @exam.user.name %></p>
+<p>
+  <%= t "exam_mailer.start_exam.body1" %>
+  <%= link_to t("exam_mailer.start_exam.start_exam"), @exam %>
+  <%= t "exam_mailer.start_exam.body2" %>
+</p>
+<p><%= t "exam_mailer.start_exam.footer" %></p>
