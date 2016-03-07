@@ -30,13 +30,10 @@ class Admin::QuestionsController < ApplicationController
   end
 
   def update
-    if @question.update_attributes question_params
-      flash[:success] = t "user.question.update_success"
-      @question.create_activity :update, owner: current_user
-      redirect_to admin_questions_path
+    if params[:state].present?
+      check_question params[:state]
     else
-      load_subjects
-      render :edit
+      update_question
     end
   end
 
@@ -55,10 +52,31 @@ class Admin::QuestionsController < ApplicationController
   end
 
   def build_answers
+    @question.answers.reset
     @question.answers.build
   end
 
   def load_subjects
     @subjects = Subject.all
+  end
+
+  def check_question state
+    if @question.update_attributes state: state, accepted_by: current_user.id
+      flash[:success] = t "user.question.check_success"
+    else
+      flash[:danger] = t "user.question.check_fail"
+    end
+    redirect_to admin_suggested_questions_path
+  end
+
+  def update_question
+    if @question.update_attributes question_params
+      flash[:success] = t "user.question.update_success"
+      @question.create_activity :update, owner: current_user
+      redirect_to admin_questions_path
+    else
+      load_subjects
+      render :edit
+    end
   end
 end

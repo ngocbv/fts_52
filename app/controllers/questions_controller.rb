@@ -59,6 +59,7 @@ class QuestionsController < ApplicationController
   end
 
   def load_subjects
+    @question.answers.reset
     @question.answers.build
     @subjects = Subject.all
   end

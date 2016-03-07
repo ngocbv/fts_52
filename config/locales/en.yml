@@ -127,6 +127,8 @@ en:
       update_success: "Update success"
       update_fail: "Update fail"
       delete_success: "Delete success"
+      check_success: "Check success"
+      check_fail: "Check fail"
       question: "Questions"
       content: "Content"
       answer: "Answer"
