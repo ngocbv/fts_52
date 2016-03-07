@@ -25,8 +25,8 @@
         <td><%= exam.created_at %></td>
         <td><%= exam.subject.name %></td>
         <td><%= status_label exam.status %></td>
-        <td><%= format_time exam.subject.duration %></td>
-        <td><%= exam.subject.question_num %></td>
+        <td><%= format_time exam.duration %></td>
+        <td><%= exam.question_num %></td>
         <td><%= format_time exam.spent_time %></td>
         <td><%= format_score exam %></td>
         <td><%= status_button exam %></td>

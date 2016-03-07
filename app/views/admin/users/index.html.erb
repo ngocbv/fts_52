@@ -1,10 +1,10 @@
 <h1><%= t ".list_users" %></h1>
 
-<%= search_form_for [:admin, @search] do |f| %>
+<%= search_form_for [:admin, @search], class: "form-inline" do |f| %>
   <%= f.condition_fields do |c| %>
     <%= render "shared/condition_fields", f: c %>
   <% end %>
-  <div class="actions"><%= f.submit t("search") %></div>
+  <div class="actions"><%= f.submit t("search"), class: "btn btn-primary" %></div>
 <% end %>
 
 <%= link_to t(".create_user"), new_admin_user_path, class: "btn btn-success pull-right" %>

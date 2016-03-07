@@ -11,7 +11,7 @@ module SubjectsHelper
     if exam.score.nil?
       "-"
     else
-      "#{exam.score}/#{exam.subject.question_num}".html_safe
+      "#{exam.score}/#{exam.question_num}".html_safe
     end
   end
 end
