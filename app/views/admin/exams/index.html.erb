@@ -1,16 +1,24 @@
 <div class="row">
   <div class="col-md-9">
     <h1><%= t ".exam_list" %></h1>
+
+    <%= search_form_for [:admin, @search] do |f| %>
+      <%= f.condition_fields do |c| %>
+        <%= render "shared/condition_fields", f: c %>
+      <% end %>
+      <div class="actions"><%= f.submit t("search") %></div>
+    <% end %>
+
     <table class="table">
       <thead>
-        <th><%= t ".id" %></th>
-        <th><%= t ".created_date" %></th>
-        <th><%= t ".subject" %></th>
-        <th><%= t ".status" %></th>
-        <th><%= t ".duration" %></th>
-        <th><%= t ".question_num" %></th>
-        <th><%= t ".spent_time" %></th>
-        <th><%= t ".score" %></th>
+        <th><%= sort_link @search, :id, t(".id") %></th>
+        <th><%= sort_link @search, :created_date, t(".created_date") %></th>
+        <th><%= sort_link @search, :subject, t(".subject") %></th>
+        <th><%= sort_link @search, :status, t(".status") %></th>
+        <th><%= sort_link @search, :duration, t(".duration") %></th>
+        <th><%= sort_link @search, :question_num, t(".question_num") %></th>
+        <th><%= sort_link @search, :spent_time, t(".spent_time") %></th>
+        <th><%= sort_link @search, :score, t(".score") %></th>
         <th></th>
         <th></th>
       </thead>
