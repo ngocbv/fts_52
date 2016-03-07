@@ -1,0 +1,14 @@
+<div class="col-md-3 clock">
+  <h2><%= t ".time_remaining" %></h2>
+  <span class="time-remaining" id="time-remaining" data-time-remaining="<%= @time_remaining %>">
+    <span class="time">
+      <h3 id="hour"></h3><%= t ".hours" %>
+    </span>
+    <span class="time">
+      <h3 id="minute"></h3><%= t ".minutes" %>
+    </span>
+    <span class="time">
+      <h3 id="second"></h3><%= t ".seconds" %>
+    </span>
+  </span>
+</div>

@@ -20,6 +20,7 @@ class ExamsController < ApplicationController
   end
 
   def show
+    @time_remaining = @exam.subject.duration - @exam.spent_time
   end
 
   def update
@@ -35,8 +36,8 @@ class ExamsController < ApplicationController
 
   private
   def exam_params
-    params.require(:exam).permit :user_id, :subject_id, results_attributes:
-      [:id, :question_id, :answer_text, content_answer: []]
+    params.require(:exam).permit :user_id, :spent_time, :subject_id, results_attributes:
+      [:id, :question_id, content_answer: []]
   end
 
   def change_status

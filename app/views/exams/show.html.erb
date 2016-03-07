@@ -1,18 +1,28 @@
-<div><%= "#{t ".exam_date"} #{@exam.time_start}" %></div>
-<h1><%= @exam.subject.name %></h1>
+<div class="row">
+  <div class="col-md-8 col-md-offset-1">
+    <h4><%= "#{t ".exam_date"} #{@exam.time_start.to_formatted_s :long_ordinal}" %></h4>
+    <h1><%= @exam.subject.name %></h1>
 
-<%= form_for @exam, url: exam_path, method: :patch do |f| %>
-  <%= f.fields_for :results do |builder| %>
-    <% question = builder.object.question %>
-    <ol>
-      <li><%= question.content %></li>
-      <%= render "show_answer", question: question, f: builder, exam: @exam %>
-    </ol>
+    <%= form_for @exam, url: exam_path, method: :patch do |f| %>
+      <ol>
+        <%= f.fields_for :results do |builder| %>
+          <% question = builder.object.question %>
+          <li class="question"><%= question.content %></li>
+          <%= render "show_answer", question: question, f: builder, exam: @exam %>
+        <% end %>
+      </ol>
+      <div id="subject_duration" data-duration= <%= @exam.subject.duration  %>></div>
+      <%= f.hidden_field :spent_time, value: "" %>
+      <% unless @exam.unstart? || @exam.checked? %>
+        <div class="action_submit">
+          <%= f.submit t("exams.finish_exam"), class: "btn btn-primary",
+            id: "finish-exam", name: "finish_exam" %>
+          <%= f.submit t("exams.save_exam"), class: "btn btn-danger pull-right", name: "save_exam" %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <% unless @exam.unstart? || @exam.checked? %>
+    <%= render "clock" %>
   <% end %>
-  <% if @exam.started? || @exam.inprogress? %>
-    <div>
-      <%= f.submit t("exams.finish_exam"), class: "btn btn-primary", name: "finish_exam" %>
-      <%= f.submit t("exams.save_exam"), class: "btn btn-danger", name: "save_exam" %>
-    </div>
-  <% end %>
-<% end %>
+</div>

@@ -85,6 +85,7 @@ en:
       form:
         new_subject: "New subject"
         update: "Update subject"
+        seconds: "seconds"
       create:
         success: "Create new subject successfully"
         fail: "Fail to create new subject"
@@ -150,7 +151,11 @@ en:
       fail: "Cannot create new exam"
     show:
       exam_date: "Exam date: "
+    clock:
       time_remaining: "Time remaining"
+      hours: "Hours"
+      minutes: "Minutes"
+      seconds: "Seconds"
     update:
       success: "Finish this exam successfully"
       fail: "Cannot finish this exam"
