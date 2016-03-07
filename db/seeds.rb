@@ -13,7 +13,7 @@ User.create! email: "admin@fts52.com",
 5.times do
   subj = Subject.create! name: Faker::Lorem.word.capitalize,
     duration: 30.minutes,
-    question_num: 5
+    question_num: 20
   10.times do
     ques = Question.create! content: Faker::Lorem.sentence,
       state: 1,
