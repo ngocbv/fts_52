@@ -27,7 +27,7 @@
         <td><%= status_label exam.status %></td>
         <td><%= format_time exam.duration %></td>
         <td><%= exam.question_num %></td>
-        <td><%= format_time exam.spent_time %></td>
+        <td><%= exam.spent_time ? format_time(exam.spent_time) : format_time(exam.duration) %></td>
         <td><%= format_score exam %></td>
         <td><%= status_button exam %></td>
       </tr>

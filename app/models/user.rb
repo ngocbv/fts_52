@@ -12,6 +12,12 @@ class User < ActiveRecord::Base
 
   validates :password, presence: true, allow_nil: true
 
+  class << self
+    def ransackable_attributes auth_object = nil
+      super & ["email", "name", "chatwork_id"]
+    end
+  end
+
   def is_user? user
     self == user
   end

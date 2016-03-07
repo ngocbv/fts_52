@@ -1,14 +1,6 @@
 <div class="row">
   <div class="col-md-9">
     <h1><%= t ".exam_list" %></h1>
-
-    <%= search_form_for [:admin, @search], class: "form-inline" do |f| %>
-      <%= f.condition_fields do |c| %>
-        <%= render "shared/condition_fields", f: c %>
-      <% end %>
-      <div class="actions"><%= f.submit t("search"), class: "btn btn-primary" %></div>
-    <% end %>
-
     <table class="table">
       <thead>
         <th><%= sort_link @search, :id, t(".id") %></th>

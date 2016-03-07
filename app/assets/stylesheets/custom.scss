@@ -27,6 +27,18 @@ input {
 ul.alert {
   padding-left: 30px;
 }
+
+.alert-notice {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+}
+
+.alert-alert {
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+  color: #8a6d3b;
+}
 .field_with_errors {
   @extend .has-error;
   .form-control {
@@ -78,7 +90,7 @@ ul.alert {
   border-left: 3px solid #00C040;
 }
 
-.alert-warning, .alert-danger {
+.alert-warning, .alert-danger, .alert-alert {
   border-left: 3px solid rgba(192, 35, 0, 0.79);
 }
 
@@ -128,10 +140,10 @@ thead {
   padding-top: 20px;
 }
 
-.result {
-  color: #009688;
+h4.result {
+  color: #3F51B5;
 }
 
 .form-inline .field {
-  padding-bottom: 7px;
+  padding-top: 7px;
 }

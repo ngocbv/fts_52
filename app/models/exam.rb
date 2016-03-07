@@ -17,6 +17,10 @@ class Exam < ActiveRecord::Base
 
   accepts_nested_attributes_for :results
 
+  def real_time_spent
+    spent_time ? spent_time + (Time.now - updated_at).to_i : duration
+  end
+
   class << self
     def send_statistic_exam
       User.all.each do |user|

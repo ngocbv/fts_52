@@ -1,8 +1,8 @@
 var interval;
 
 function time_remaining(total_seconds){
-  if (total_seconds <= 0) {
-    $("form").submit();
+  if (total_seconds == 0) {
+    $("form.edit_exam").submit();
     return;
   }else{
     var seconds = total_seconds % 60;

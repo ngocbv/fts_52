@@ -1,8 +1,8 @@
 <div class="field">
   <%= f.attribute_fields do |a| %>
-    <%= a.attribute_select({only: [:cont, :not_cont]}, {class: "form-control"}) %>
+    <%= a.attribute_select({only: [:eq, :cont]}, {class: "form-control"}) %>
   <% end %>
-  <%= f.predicate_select({only: [:cont, :not_cont]}, {class: "form-control"}) %>
+  <%= f.predicate_select({only: [:eq, :cont]}, {class: "form-control"}) %>
   <%= f.value_fields do |v| %>
     <%= v.text_field :value, class: "form-control" %>
   <% end %>

@@ -24,7 +24,8 @@ class ExamsController < ApplicationController
   end
 
   def show
-    @time_remaining = @exam.subject.duration - @exam.spent_time
+    @time_remaining = @exam.duration - @exam.real_time_spent
+    @time_remaining = 0 if @time_remaining < 0
   end
 
   def update
