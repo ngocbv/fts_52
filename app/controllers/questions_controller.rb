@@ -8,7 +8,6 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @question.answers.build
   end
 
   def create

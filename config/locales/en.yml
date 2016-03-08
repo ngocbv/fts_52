@@ -221,3 +221,9 @@ en:
       list_exam: "Exams you took in %{time}"
       score: "Score: "
       footer: "Thank you for using our system."
+  subject_mailer:
+    subject: "FTS system with new subject"
+    header: "Notification from FTS Admin"
+    greeting: "Hi, %{name}"
+    body: "FTS system has created new subject. Please check!"
+    footer: "Thank you for using our system."
