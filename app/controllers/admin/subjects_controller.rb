@@ -8,6 +8,7 @@ class Admin::SubjectsController < ApplicationController
   def create
     respond_to do |format|
       if @subject.save
+        CreateSubjectWorker.perform_async @subject.id
         format.html do
           flash[:success] = t ".success"
           redirect_to admin_subjects_path

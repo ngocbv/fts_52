@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $(".select-box").change(function(){
+  $(document).on("change", ".select-box", function(){
     if($(this).val() == "text"){
       $(".choise").hide();
       $(".text").show();
