@@ -1,0 +1,11 @@
+<%= t "exam_mailer.send_statistic_exam.header" %>
+
+<%= t "exam_mailer.send_statistic_exam.greeting", name: @user.name %>
+
+<%= t "exam_mailer.send_statistic_exam.list_exam", time: Time.now.strftime("%B") %>
+<% @user.exams.each do |exam| %>
+  <%= exam.subject.name %>
+  <%= t "exam_mailer.send_statistic_exam.score" %> <em>(<%= exam.created_at.strftime "%F %X" %>)</em>.
+  <%= exam.score.present? ? "#{exam.score}/#{exam.subject.question_num}" : "-:-" %>
+<% end %>
+<%= t "exam_mailer.send_statistic_exam.footer" %>

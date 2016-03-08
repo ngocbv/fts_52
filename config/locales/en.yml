@@ -214,3 +214,10 @@ en:
     greeting: "Hi, %{name}"
     body: "Your suggested question is checked. Please check!"
     footer: "Thank you for using our system."
+    send_statistic_exam:
+      subject: "Statistic exam in month"
+      header: "Framgia Training System Statistic"
+      greeting: "Hi, %{name}"
+      list_exam: "Exams you took in %{time}"
+      score: "Score: "
+      footer: "Thank you for using our system."
