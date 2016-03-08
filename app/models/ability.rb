@@ -9,8 +9,8 @@ class Ability
     elsif controller_namespace == "Admin"
       cannot :read, :all
     else
-      can :create, Exam
-      can :read, :all
+      can [:index, :create], Exam
+      can [:show, :update], Exam, user_id: user.id
       can :manage, Question, user_id: user.id
     end
   end

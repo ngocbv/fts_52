@@ -1,2 +1,4 @@
-<%= t ".update" %>
+<%= t ".updated" %>
+<%= activity.trackable.checked? ? link_to(t(".exam"), activity.trackable) : t(".exam") %>
+<%= t ".with_subject" %>
 <%= activity.trackable.subject.name %>

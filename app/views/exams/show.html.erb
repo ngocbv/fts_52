@@ -1,6 +1,7 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-1">
     <h4><%= "#{t ".exam_date"} #{@exam.time_start.to_formatted_s :long_ordinal}" %></h4>
+    <h4 class="result"><%= "#{t "exams.result"}: #{format_score @exam}" if @exam.checked? %></h4>
     <h1><%= @exam.subject.name %></h1>
 
     <%= form_for @exam, url: exam_path, method: :patch do |f| %>
@@ -9,6 +10,7 @@
           <% question = builder.object.question %>
           <li class="question"><%= question.content %></li>
           <%= render "show_answer", question: question, f: builder, exam: @exam %>
+          <%= render "question_result", correct: builder.object.correct if @exam.checked? %>
         <% end %>
       </ol>
       <div id="subject_duration" data-duration= <%= @exam.subject.duration  %>></div>

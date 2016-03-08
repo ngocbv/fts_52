@@ -11,6 +11,7 @@ class Exam < ActiveRecord::Base
   has_many :results, dependent: :destroy
 
   before_create :check_number_question
+  before_create :assign_duration_question_num
 
   scope :taken_by, -> user{where user_id: user.id}
 
@@ -20,5 +21,10 @@ class Exam < ActiveRecord::Base
   def check_number_question
     subject = Subject.find subject_id
     subject.questions.count >= subject.question_num
+  end
+
+  def assign_duration_question_num
+    self.duration = subject.duration if duration.nil?
+    self.question_num = subject.question_num if question_num.nil?
   end
 end
