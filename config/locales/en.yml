@@ -208,3 +208,9 @@ en:
   questions:
     correct_answer: "Correct answer"
     wrong_answer: "Wrong answer"
+  question_mailer:
+    subject: "Your suggested question is checked"
+    header: "Notification from FTS Admin"
+    greeting: "Hi, %{name}"
+    body: "Your suggested question is checked. Please check!"
+    footer: "Thank you for using our system."
