@@ -2,6 +2,7 @@
   <div class="col-md-8 col-md-offset-1">
     <h4><%= "#{t ".exam_date"} #{@exam.time_start.to_formatted_s :long_ordinal}" %></h4>
     <h4 class="result"><%= "#{t "exams.result"}: #{format_score @exam}" if @exam.checked? %></h4>
+    <%= social_share_button_tag format_score(@exam), popup: true if @exam.checked? %>
     <h1><%= @exam.subject.name %></h1>
 
     <%= form_for @exam, url: exam_path, method: :patch do |f| %>

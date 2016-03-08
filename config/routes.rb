@@ -1,7 +1,7 @@
 require "sidekiq/web"
 
 Rails.application.routes.draw do
-  root "static_pages#home"
+  root "exams#index"
   devise_for :users
 
   resources :users, only: [:show] do
