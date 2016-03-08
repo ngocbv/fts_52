@@ -63,6 +63,7 @@ class Admin::QuestionsController < ApplicationController
   def check_question state
     if @question.update_attributes state: state, accepted_by: current_user.id
       flash[:success] = t "user.question.check_success"
+      QuestionMailer.check_question(@question).deliver_now
     else
       flash[:danger] = t "user.question.check_fail"
     end
