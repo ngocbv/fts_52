@@ -5,8 +5,8 @@ class Admin::QuestionsController < ApplicationController
 
   def index
     @search = @questions.accept.search params[:q]
-    @questions = @search.result.paginate page: params[:page]
-    @activities = Questions::QuestionActivityService.list_activities
+    @questions = @search.result.paginate(page: params[:page]).includes(:subject)
+    @activities = Questions::QuestionActivityService.list_activities.includes(:owner, :trackable)
   end
 
   def show

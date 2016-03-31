@@ -3,8 +3,8 @@ class Admin::ExamsController < ApplicationController
 
   def index
     @search = @exams.search params[:q]
-    @exams = @search.result
+    @exams = @search.result.includes(:subject)
     @search.build_condition
-    @activities = Exams::ExamsActivityService.list_activities
+    @activities = Exams::ExamsActivityService.list_activities.includes(:owner, :trackable)
   end
 end

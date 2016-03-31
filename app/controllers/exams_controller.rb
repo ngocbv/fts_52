@@ -3,7 +3,7 @@ class ExamsController < ApplicationController
   before_action :change_status, only: [:show, :update]
 
   def index
-    @exams = @exams.taken_by(current_user).order created_at: :desc
+    @exams = @exams.taken_by(current_user).order(created_at: :desc).includes(:subject)
     @subjects = Subject.all
     @exam = Exam.new
   end
